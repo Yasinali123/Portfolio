@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | MD YASIN Portfolio</title>
+    <meta name="description" content="About MD YASIN - Passionate Web Developer and Innovator.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="hacker-theme">
+    <!-- Hacker Background -->
+    <div class="cyber-bg hacker-bg" aria-hidden="true">
+        <canvas id="hacker-rain" class="hacker-rain"></canvas>
+        <div class="hacker-noise"></div>
+        <div class="hacker-scanlines"></div>
+        <div class="hacker-vignette"></div>
+    </div>
+
+    <!-- Global Elements -->
+    <canvas id="cursor-canvas" class="cursor-canvas"></canvas>
+    <div id="cursor-hud" class="cursor-hud"></div>
+    <div id="custom-cursor" class="custom-cursor">
+        <svg viewBox="0 0 100 100" width="40" height="40">
+            <defs>
+                <linearGradient id="gradChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff" />
+                    <stop offset="40%" stop-color="#555555" />
+                    <stop offset="100%" stop-color="#050505" />
+                </linearGradient>
+                <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+            </defs>
+            <polygon points="10,10 85,35 45,45 35,85" fill="url(#gradChrome)" />
+            <polygon points="22,22 65,34 40,40 33,65" fill="#00f0ff" filter="url(#glowBlue)" />
+        </svg>
+    </div>
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- AI Assistant Widget -->
+    <div class="ai-widget" id="ai-widget">
+        <div class="ai-icon"><i class="fa-solid fa-robot"></i></div>
+        <div class="ai-popup">
+            <p>Hi! I'm Yasin's AI Assistant. How can I help you today?</p>
+            <div class="ai-options">
+                <a href="Md Yasin Resume.pdf" target="_blank" class="ai-btn">View Resume</a>
+                <a href="contact.html" class="ai-btn">Contact Yasin</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-text">YASIN<span class="glow-dot">.</span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="section-header">
+            <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="about-grid">
+            <div class="about-text-content glass-card">
+                <h3>Passionate Web Developer & Innovator</h3>
+                <p>I am deeply interested in futuristic UI/UX and love building innovative digital products that push
+                    the boundaries of modern tech. As a founder of two startups, I understand how to blend strategy with
+                    creative development.</p>
+                <p>My focus lies in creating AI-powered platforms and scalable tech ideas with strong frontend
+                    creativity and modern web experiences.</p>
+
+                <div class="skills-container">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>HTML/CSS/JS</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>UI/UX & Figma</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Startup Strategy</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>AI Tools</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress" data-width="80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-visuals">
+                <div class="floating-icons">
+                    <div class="tech-icon"><i class="fa-brands fa-html5"></i></div>
+                    <div class="tech-icon"><i class="fa-brands fa-css3-alt"></i></div>
+                    <div class="tech-icon"><i class="fa-brands fa-js"></i></div>
+                    <div class="tech-icon"><i class="fa-brands fa-figma"></i></div>
+                    <div class="tech-icon"><i class="fa-brands fa-react"></i></div>
+                    <div class="tech-icon"><i class="fa-solid fa-brain"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services-section">
+        <div class="section-header">
+            <h2 class="section-title">What I <span class="gradient-text">Do</span></h2>
+            <div class="title-line"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card glass-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+                <h3>Web Development</h3>
+                <p>Building responsive, highly interactive, and futuristic websites with modern technologies and clean architecture.</p>
+            </div>
+            <div class="service-card glass-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                <h3>UI/UX Design</h3>
+                <p>Crafting intuitive user experiences and premium aesthetics, focusing on stunning visual hierarchies and dynamic interactions.</p>
+            </div>
+            <div class="service-card glass-card" data-tilt data-tilt-max="10" data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2">
+                <div class="service-icon"><i class="fa-solid fa-rocket"></i></div>
+                <h3>Startup Strategy</h3>
+                <p>Transforming ideas into scalable digital products, leveraging deep experience in launching successful tech startups.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MD YASIN</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

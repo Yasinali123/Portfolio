@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | MD YASIN Portfolio</title>
+    <meta name="description" content="Resume and Experience of MD YASIN.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="hacker-theme">
+    <!-- Hacker Background -->
+    <div class="cyber-bg hacker-bg" aria-hidden="true">
+        <canvas id="hacker-rain" class="hacker-rain"></canvas>
+        <div class="hacker-noise"></div>
+        <div class="hacker-scanlines"></div>
+        <div class="hacker-vignette"></div>
+    </div>
+
+    <!-- Global Elements -->
+    <canvas id="cursor-canvas" class="cursor-canvas"></canvas>
+    <div id="cursor-hud" class="cursor-hud"></div>
+    <div id="custom-cursor" class="custom-cursor">
+        <svg viewBox="0 0 100 100" width="40" height="40">
+            <defs>
+                <linearGradient id="gradChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff" />
+                    <stop offset="40%" stop-color="#555555" />
+                    <stop offset="100%" stop-color="#050505" />
+                </linearGradient>
+                <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+            </defs>
+            <polygon points="10,10 85,35 45,45 35,85" fill="url(#gradChrome)" />
+            <polygon points="22,22 65,34 40,40 33,65" fill="#00f0ff" filter="url(#glowBlue)" />
+        </svg>
+    </div>
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- AI Assistant Widget -->
+    <div class="ai-widget" id="ai-widget">
+        <div class="ai-icon"><i class="fa-solid fa-robot"></i></div>
+        <div class="ai-popup">
+            <p>Hi! I'm Yasin's AI Assistant. How can I help you today?</p>
+            <div class="ai-options">
+                <a href="Md Yasin Resume.pdf" target="_blank" class="ai-btn">View Resume</a>
+                <a href="contact.html" class="ai-btn">Contact Yasin</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-text">YASIN<span class="glow-dot">.</span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html" class="active">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section resume-section">
+        <div class="section-header">
+            <h2 class="section-title">Experience & <span class="gradient-text">Resume</span></h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="resume-container">
+            <div class="timeline-area glass-card">
+                <h3><i class="fa-solid fa-briefcase"></i> Experience & Startups</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Founder</h4>
+                            <h5>RentEd & Yasinova | Present</h5>
+                            <p>Leading the development and strategy of two innovative platforms, focusing on scalable
+                                tech and user-centric design.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Freelance Web Developer</h4>
+                            <h5>Various Clients | 2025 - Present</h5>
+                            <p>Delivered premium, highly animated web solutions for businesses, increasing their user
+                                engagement.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="mt-4"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Computer Science</h4>
+                            <h5>Chaibasa Engineering College | 2025 - 2029</h5>
+                            <p>Focused on software engineering, AI integration, and scalable web architectures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-actions glass-card">
+                <div class="resume-preview">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <h4>Md Yasin Resume.pdf</h4>
+                    <p>Updated: Recently</p>
+                </div>
+                <a href="Md Yasin Resume.pdf" download class="btn-primary glow-btn full-width magnetic-btn"
+                    style="display: block; text-align: center; text-decoration: none; margin-top: 1rem;">
+                    <i class="fa-solid fa-download"></i> Download Full Resume
+                </a>
+
+                <div class="certifications mt-4">
+                    <h4><i class="fa-solid fa-certificate"></i> Certifications</h4>
+                    <ul class="cert-list">
+                        <li>Advanced Frontend Architecture</li>
+                        <li>UI/UX Design Masterclass</li>
+                        <li>Startup Fundamentals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section certificates-section">
+        <div class="section-header">
+            <h2 class="section-title">My <span class="gradient-text">Certificates</span></h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="certificates-grid">
+            <!-- Certificate 1 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 1</p>
+                    <img src="AI for techies_page-0001.jpg" alt="Python Using AI Workshop">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>Python Using AI</h3>
+                    <p>Issued by: AI For Techies</p>
+                    <a href="AI for techies_page-0001.jpg" target="_blank"
+                        class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem;">View
+                        Credential</a>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 2</p>
+                    <img src="Azure_Fundamentals_certificate_page-0001.jpg" alt="Azure Fundamentals">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>Azure Fundamentals</h3>
+                    <p>Issued by: Microsoft & Simplilearn</p>
+                    <a href="Azure_Fundamentals_certificate_page-0001.jpg" target="_blank"
+                        class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem;">View
+                        Credential</a>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 3</p>
+                    <img src="Generative_AI_certificate_page-0001.jpg" alt="Intro to Generative AI Studio">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>Generative AI Studio</h3>
+                    <p>Issued by: Google Cloud & Simplilearn</p>
+                    <a href="Generative_AI_certificate_page-0001.jpg" target="_blank"
+                        class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem;">View
+                        Credential</a>
+                </div>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 4</p>
+                    <img src="idea rangmanch certificate.jpg" alt="Idea Rangmanch 2.0">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>Idea Rangmanch 2.0</h3>
+                    <p>Issued by: Chaibasa Engineering College</p>
+                    <a href="idea rangmanch certificate.jpg" target="_blank"
+                        class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem;">View
+                        Credential</a>
+                </div>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 5</p>
+                    <img src="Techspire certificate.jpg" alt="Hack-the-Web">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>Hack-the-Web</h3>
+                    <p>Issued by: TechSpire</p>
+                    <a href="Techspire certificate.jpg" target="_blank"
+                        class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem;">View
+                        Credential</a>
+                </div>
+            </div>
+
+            <!-- Certificate 6 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 6</p>
+                    <img src="" alt="Coming Soon">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>More Certifications</h3>
+                    <p>Issued by: Future Learning</p>
+                    <a href="#" class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem; pointer-events: none; opacity: 0.5;">Coming
+                        Soon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MD YASIN</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

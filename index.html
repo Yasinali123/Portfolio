@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD YASIN | Premium Web Developer & Founder</title>
+    <meta name="description" content="MD YASIN - Futuristic personal portfolio, Web Developer & Startup Founder.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="hacker-theme">
+    <!-- Hacker Background -->
+    <div class="cyber-bg hacker-bg" aria-hidden="true">
+        <canvas id="hacker-rain" class="hacker-rain"></canvas>
+        <div class="hacker-noise"></div>
+        <div class="hacker-scanlines"></div>
+        <div class="hacker-vignette"></div>
+    </div>
+
+    <!-- Global Elements -->
+    <canvas id="cursor-canvas" class="cursor-canvas"></canvas>
+    <div id="cursor-hud" class="cursor-hud"></div>
+    <div id="custom-cursor" class="custom-cursor">
+        <svg viewBox="0 0 100 100" width="40" height="40">
+            <defs>
+                <linearGradient id="gradChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff" />
+                    <stop offset="40%" stop-color="#555555" />
+                    <stop offset="100%" stop-color="#050505" />
+                </linearGradient>
+                <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+            </defs>
+            <polygon points="10,10 85,35 45,45 35,85" fill="url(#gradChrome)" />
+            <polygon points="22,22 65,34 40,40 33,65" fill="#00f0ff" filter="url(#glowBlue)" />
+        </svg>
+    </div>
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- AI Assistant Widget -->
+    <div class="ai-widget" id="ai-widget">
+        <div class="ai-icon"><i class="fa-solid fa-robot"></i></div>
+        <div class="ai-popup">
+            <p>Hi! I'm Yasin's AI Assistant. How can I help you today?</p>
+            <div class="ai-options">
+                <a href="resume.html" class="ai-btn">View Resume</a>
+                <a href="contact.html" class="ai-btn">Contact Yasin</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-text">YASIN<span class="glow-dot">.</span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero-section">
+        <div class="hero-content">
+            <div class="intro-badge">Welcome to the Future</div>
+            <h1 class="hero-title">Hi, I'm <span class="gradient-text">MD YASIN</span></h1>
+            <h2 class="hero-subtitle">I am a <span class="typing-text"></span><span class="cursor">|</span></h2>
+            <p class="hero-desc">Building futuristic, scalable, and immersive digital experiences. Merging deep AI
+                integration with premium web architectures.</p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num" data-val="2">0</span>
+                    <span class="stat-label">Startups Founded</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-val="10">+0</span>
+                    <span class="stat-label">Web Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num" data-val="60">0%</span>
+                    <span class="stat-label">Creative Dev</span>
+                </div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="projects.html" class="btn-primary glow-btn magnetic-btn">View Projects</a>
+                <a href="Md Yasin Resume.pdf" download class="btn-secondary magnetic-btn"><i
+                        class="fa-solid fa-download"></i> Download
+                    Resume</a>
+            </div>
+
+            <div class="social-links">
+                <a href="#" class="yasinali123.github.io/"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="social-icon magnetic-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"
+                    class="https://www.linkedin.com/in/md-yasin-b92b7237b?utm_source=share_via&utm_content=profile&utm_medium=member_android"><i
+                        class="fa-brands fa-twitter"></i></a>
+                <a href="contact.html" class="social-icon magnetic-btn"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="hero-visuals">
+            <div class="profile-container">
+                <div class="profile-glow"></div>
+                <img src="YASIN PIC.jpg" alt="MD YASIN" class="profile-img" id="hero-profile-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MD YASIN</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
