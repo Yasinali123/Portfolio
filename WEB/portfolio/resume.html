@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | MD YASIN Portfolio</title>
+    <meta name="description"
+        content="Resume and Experience of MD YASIN - Computer Science Student, Frontend Developer, UI/UX Designer & Startup Founder.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="hacker-theme">
+    <!-- Hacker Background -->
+    <div class="cyber-bg hacker-bg" aria-hidden="true">
+        <canvas id="hacker-rain" class="hacker-rain"></canvas>
+        <div class="hacker-noise"></div>
+        <div class="hacker-scanlines"></div>
+        <div class="hacker-vignette"></div>
+    </div>
+
+    <!-- Global Elements -->
+    <canvas id="cursor-canvas" class="cursor-canvas"></canvas>
+    <div id="cursor-hud" class="cursor-hud"></div>
+    <div id="custom-cursor" class="custom-cursor">
+        <svg viewBox="0 0 100 100" width="40" height="40">
+            <defs>
+                <linearGradient id="gradChrome" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff" />
+                    <stop offset="40%" stop-color="#555555" />
+                    <stop offset="100%" stop-color="#050505" />
+                </linearGradient>
+                <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="4" result="blur" />
+                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+            </defs>
+            <polygon points="10,10 85,35 45,45 35,85" fill="url(#gradChrome)" />
+            <polygon points="22,22 65,34 40,40 33,65" fill="#00f0ff" filter="url(#glowBlue)" />
+        </svg>
+    </div>
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- AI Assistant Widget -->
+    <div class="ai-widget" id="ai-widget">
+        <div class="ai-icon"><i class="fa-solid fa-robot"></i></div>
+        <div class="ai-popup">
+            <p>Hi! I'm Yasin's AI Assistant. How can I help you today?</p>
+            <div class="ai-options">
+                <a href="Md_Yasin_Resume.pdf" target="_blank" class="ai-btn">View Resume PDF</a>
+                <a href="contact.html" class="ai-btn">Contact Yasin</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-text">YASIN<span class="glow-dot">.</span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resume.html" class="active">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="mobile-toggle" aria-label="Toggle Navigation Menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section resume-section">
+        <div class="section-header">
+            <h2 class="section-title">Curriculum <span class="gradient-text">Vitae</span></h2>
+            <div class="title-line"></div>
+        </div>
+
+        <!-- Resume Contact & Bio Card -->
+        <div class="resume-header-card glass-card">
+            <div class="resume-header-info">
+                <h3>MD YASIN</h3>
+                <p class="sub-tagline">Computer Science & Engineering Student | Frontend Developer | UI/UX | Startup
+                    Founder</p>
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    Computer Science & Engineering undergraduate with hands-on experience in frontend web development,
+                    UI/UX design, and entrepreneurial product development. Proven track record as a founder building
+                    scalable platforms (Yasinova, RentED) and actively competing in national hackathons. Skilled in
+                    React, Node.js, JavaScript, modern web tools, and user-centric interface design.
+                </p>
+                <div class="contact-badges">
+                    <span class="contact-badge"><i class="fa-solid fa-location-dot"></i> Godda, Jharkhand, India</span>
+                    <a href="tel:+918084440846" class="contact-badge"><i class="fa-solid fa-phone"></i> +91
+                        8084440846</a>
+                    <a href="mailto:aliyasin4u@gmail.com" class="contact-badge"><i class="fa-solid fa-envelope"></i>
+                        aliyasin4u@gmail.com</a>
+                    <a href="https://github.com/yasinali123" target="_blank" class="contact-badge"><i
+                            class="fa-brands fa-github"></i> github.com/yasinali123</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="resume-container">
+            <div class="timeline-area glass-card">
+                <!-- Founder & Startup Experience -->
+                <h3><i class="fa-solid fa-rocket"></i> Founder & Startup Experience</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Founder & Lead Developer — Yasinova</h4>
+                            <h5>Construction Tech Marketplace | 2026 – Present | <a
+                                    href="https://yasinali123.github.io/Project/" target="_blank"
+                                    style="color: var(--primary); text-decoration: underline;"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></h5>
+                            <ul class="timeline-bullets">
+                                <li>Architected and launched a B2B/B2C construction-material marketplace platform
+                                    connecting buyers directly with verified regional suppliers and logistics services.
+                                </li>
+                                <li>Engineered intuitive discovery and procurement workflows, significantly simplifying
+                                    material selection and price transparency for contractors and home builders.</li>
+                                <li>Designed responsive frontend layouts and interactive user interfaces using modern
+                                    web standards.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Founder & Product Designer — RentED</h4>
+                            <h5>Student Rental & Resale Platform | 2026 – Present</h5>
+                            <ul class="timeline-bullets">
+                                <li>Conceptualized and built a hyper-local campus marketplace for students to buy, sell,
+                                    and rent books, lab equipment, calculators, and accommodation (PGs/rooms).</li>
+                                <li>Implemented campus-level user verification and peer-to-peer transactional workflows
+                                    to ensure trust and affordability.</li>
+                                <li>Deployed application on Vercel with continuous integration and responsive design
+                                    optimized for mobile and desktop users.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Projects -->
+                <h3 class="mt-4"><i class="fa-solid fa-code"></i> Technical Projects</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Code-Verse</h4>
+                            <h5>Developer Community & Showcase Web App</h5>
+                            <ul class="timeline-bullets">
+                                <li>Developed an interactive, developer-centric web application demonstrating advanced
+                                    frontend components, modern aesthetic trends, and responsive layouts.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Photo Gallery</h4>
+                            <h5>Modern Interactive Image Gallery | <a
+                                    href="https://yasinali123.github.io/CodeAlpha_Image-Gallery/" target="_blank"
+                                    style="color: var(--primary); text-decoration: underline;"><i
+                                        class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a></h5>
+                            <ul class="timeline-bullets">
+                                <li>Built a lightweight, highly performant responsive image gallery featuring optimized
+                                    layout grid systems, seamless modal previews, and smooth UI interactions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <h3 class="mt-4"><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Bachelor of Technology (B.Tech) in Computer Science & Engineering</h4>
+                            <h5>Chaibasa Engineering College, Jharkhand | 2025 – 2029</h5>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Senior Secondary (Class XII)</h4>
+                            <h5>Diksha International School | 2022 – 2024</h5>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Secondary Education (Class X)</h4>
+                            <h5>Saint Thomas School, Godda | 2021 – 2022</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership & Hackathons -->
+                <h3 class="mt-4"><i class="fa-solid fa-trophy"></i> Leadership & Hackathons</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>SBI Hackathon @ Global Fintech Fest (GFF 2026)</h4>
+                            <p>Shortlisted to the Idea Submission phase from a highly competitive national field, reimagining the future of banking (Organised by SBI, NPCI & HackCulture).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Smart India Hackathon (SIH)</h4>
+                            <p>Participated in intensive nationwide team hackathon, collaborating to solve real-world
+                                governmental and industrial problem statements.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Idea Rangmanch 2.0</h4>
+                            <p>Pitched startup ventures to industry mentors and investor panels, refining product
+                                strategy, business logic, and presentation capabilities.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Hack-To-Hire & TECH-SPIRE</h4>
+                            <p>Competed in competitive coding, technical innovation challenges, and algorithmic
+                                problem-solving events.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>Institution’s Innovation Council (IIC)</h4>
+                            <p>Active member driving student innovation, entrepreneurship awareness, and tech ecosystem
+                                development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar Actions & Skills Matrix -->
+            <div class="resume-actions glass-card">
+                <div class="resume-preview">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <h4>Md_Yasin_Resume.pdf</h4>
+                    <p style="color: var(--primary); font-size: 0.85rem; margin-top: 0.3rem;">Official Verified Document
+                    </p>
+                </div>
+
+                <a href="Md_Yasin_Resume.pdf" download="Md_Yasin_Resume.pdf"
+                    class="btn-primary glow-btn full-width magnetic-btn"
+                    style="display: block; text-align: center; text-decoration: none; margin-top: 1rem;">
+                    <i class="fa-solid fa-download"></i> Download Resume PDF
+                </a>
+
+                <a href="Md_Yasin_Resume.pdf" onclick="openPdfModal('Md_Yasin_Resume.pdf', 'MD YASIN — Official Resume'); return false;" class="btn-secondary full-width magnetic-btn"
+                    style="display: block; text-align: center; text-decoration: none; margin-top: 0.8rem;">
+                    <i class="fa-solid fa-eye"></i> Quick PDF Preview
+                </a>
+
+                <!-- Technical Skills Matrix -->
+                <div class="skills-matrix-wrapper mt-4">
+                    <h4 style="color: #fff; font-size: 1.1rem; margin-bottom: 1rem;"><i
+                            class="fa-solid fa-laptop-code"></i> Technical Skills</h4>
+
+                    <div class="skills-matrix">
+                        <div class="skill-category">
+                            <h4><i class="fa-solid fa-code"></i> Programming</h4>
+                            <div class="skill-pills">
+                                <span class="skill-pill">C</span>
+                                <span class="skill-pill">JavaScript (ES6+)</span>
+                                <span class="skill-pill">HTML5</span>
+                                <span class="skill-pill">CSS3</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4><i class="fa-solid fa-globe"></i> Web Tech</h4>
+                            <div class="skill-pills">
+                                <span class="skill-pill">React.js</span>
+                                <span class="skill-pill">Node.js</span>
+                                <span class="skill-pill">Responsive Design</span>
+                                <span class="skill-pill">REST APIs</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4><i class="fa-solid fa-layer-group"></i> UI/UX & Design</h4>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Figma</span>
+                                <span class="skill-pill">Wireframing</span>
+                                <span class="skill-pill">Prototyping</span>
+                                <span class="skill-pill">User Research</span>
+                                <span class="skill-pill">Interface Design</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h4><i class="fa-solid fa-screws-gutter"></i> Tools & Platforms</h4>
+                            <div class="skill-pills">
+                                <span class="skill-pill">Git</span>
+                                <span class="skill-pill">GitHub</span>
+                                <span class="skill-pill">Vercel</span>
+                                <span class="skill-pill">Render</span>
+                                <span class="skill-pill">VS Code</span>
+                                <span class="skill-pill">AI Tools</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages & Interests -->
+                <div class="certifications mt-4">
+                    <h4><i class="fa-solid fa-language"></i> Languages</h4>
+                    <ul class="cert-list">
+                        <li>English (Professional)</li>
+                        <li>Hindi (Native)</li>
+                    </ul>
+
+                    <h4 class="mt-4"><i class="fa-solid fa-heart"></i> Interests</h4>
+                    <div class="skill-pills mt-4" style="margin-top: 0.8rem;">
+                        <span class="skill-pill">Vibe Coding</span>
+                        <span class="skill-pill">Web Designing</span>
+                        <span class="skill-pill">Exploring Emerging AI Tech</span>
+                        <span class="skill-pill">Kho-Kho & Kabaddi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section certificates-section">
+        <div class="section-header">
+            <h2 class="section-title">My <span class="gradient-text">Certificates</span></h2>
+            <div class="title-line"></div>
+        </div>
+
+        <div class="certificates-grid">
+            <!-- Certificate 1 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 1</p>
+                    <img src="AI for techies_page-0001.jpg" alt="Python Using AI Workshop">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>Python Using AI</h3>
+                    <p>Issued by: AI For Techies</p>
+                    <a href="AI for techies_page-0001.jpg" target="_blank"
+                        class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem;">View
+                        Credential</a>
+                </div>
+            </div>
+
+            <!-- Certificate 2 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 2</p>
+                    <img src="Azure_Fundamentals_certificate_page-0001.jpg" alt="Azure Fundamentals">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>Azure Fundamentals</h3>
+                    <p>Issued by: Microsoft & Simplilearn</p>
+                    <a href="Azure_Fundamentals_certificate_page-0001.jpg" target="_blank"
+                        class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem;">View
+                        Credential</a>
+                </div>
+            </div>
+
+            <!-- Certificate 3 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 3</p>
+                    <img src="Generative_AI_certificate_page-0001.jpg" alt="Intro to Generative AI Studio">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>Generative AI Studio</h3>
+                    <p>Issued by: Google Cloud & Simplilearn</p>
+                    <a href="Generative_AI_certificate_page-0001.jpg" target="_blank"
+                        class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem;">View
+                        Credential</a>
+                </div>
+            </div>
+
+            <!-- Certificate 4 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 4</p>
+                    <img src="idea rangmanch certificate.jpg" alt="Idea Rangmanch 2.0">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>Idea Rangmanch 2.0</h3>
+                    <p>Issued by: Chaibasa Engineering College</p>
+                    <a href="idea rangmanch certificate.jpg" target="_blank"
+                        class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem;">View
+                        Credential</a>
+                </div>
+            </div>
+
+            <!-- Certificate 5 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 5</p>
+                    <img src="Techspire certificate.jpg" alt="Hack-the-Web">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>Hack-the-Web</h3>
+                    <p>Issued by: TechSpire</p>
+                    <a href="Techspire certificate.jpg" target="_blank"
+                        class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem;">View
+                        Credential</a>
+                </div>
+            </div>
+
+            <!-- Certificate 6: SBI Hackathon @ GFF 2026 -->
+            <div class="certificate-card glass-card">
+                <div class="cert-image-placeholder">
+                    <i class="fa-solid fa-image"></i>
+                    <p>Image 6</p>
+                    <img src="SBI_Hackathon_certificate_page-0001.jpg" alt="SBI Hackathon @ GFF 2026">
+                </div>
+                <div class="cert-info mt-4">
+                    <h3>SBI Hackathon @ GFF 2026</h3>
+                    <p>Issued by: SBI & NPCI (Global Fintech Fest)</p>
+                    <a href="MD YASIN — SBI Hackathon @ GFF 2026 — Idea Submission Shortlist.pdf" onclick="openPdfModal('MD YASIN — SBI Hackathon @ GFF 2026 — Idea Submission Shortlist.pdf', 'SBI Hackathon @ GFF 2026 Certificate'); return false;" target="_blank"
+                        class="btn-secondary magnetic-btn cert-btn full-width"
+                        style="text-align: center; display: block; box-sizing: border-box; margin-top: 1rem;">View
+                        Credential</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Elements -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <div id="pdf-modal-overlay" class="pdf-modal-overlay">
+        <div class="pdf-modal-window">
+            <div class="pdf-modal-bar">
+                <h3 id="pdf-modal-title"><i class="fa-solid fa-file-pdf"></i> Document Preview</h3>
+                <button id="pdf-modal-close" class="pdf-modal-close" aria-label="Close Preview">&times;</button>
+            </div>
+            <iframe id="pdf-modal-frame" class="pdf-modal-frame" src=""></iframe>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 MD YASIN</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

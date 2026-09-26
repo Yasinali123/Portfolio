@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD YASIN | Premium Web Developer & Founder</title>
-    <meta name="description" content="MD YASIN - Futuristic personal portfolio, Web Developer & Startup Founder.">
+    <title>Contact | MD YASIN Portfolio</title>
+    <meta name="description" content="Contact MD YASIN - Get in touch for projects, startups, or ideas.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="hacker-theme">
+<body class="hacker-theme contact-page">
     <!-- Hacker Background -->
     <div class="cyber-bg hacker-bg" aria-hidden="true">
         <canvas id="hacker-rain" class="hacker-rain"></canvas>
@@ -70,58 +70,80 @@
             <span class="logo-text">YASIN<span class="glow-dot">.</span></span>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="resume.html">Resume</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
         <button class="mobile-toggle" aria-label="Toggle Navigation Menu">
             <i class="fa-solid fa-bars"></i>
         </button>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="section hero-section">
-        <div class="hero-content">
-            <div class="intro-badge">Welcome to the Future</div>
-            <h1 class="hero-title">Hi, I'm <span class="gradient-text">MD YASIN</span></h1>
-            <h2 class="hero-subtitle">I am a <span class="typing-text"></span><span class="cursor">|</span></h2>
-            <p class="hero-desc">Computer Science & Engineering Student, Frontend Developer, UI/UX Designer, and Founder of Yasinova & RentED. Building scalable platforms and modern web experiences.</p>
-
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-num" data-val="2">0</span>
-                    <span class="stat-label">Startups Founded</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num" data-val="4">+0</span>
-                    <span class="stat-label">Featured Projects</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-num" data-val="100">0%</span>
-                    <span class="stat-label">Creative Dev</span>
-                </div>
-            </div>
-
-            <div class="hero-actions">
-                <a href="projects.html" class="btn-primary glow-btn magnetic-btn">View Projects</a>
-                <a href="Md_Yasin_Resume.pdf" download="Md_Yasin_Resume.pdf" class="btn-secondary magnetic-btn"><i
-                        class="fa-solid fa-download"></i> Download
-                    Resume</a>
-            </div>
-
-            <div class="social-links">
-                <a href="https://github.com/yasinali123" target="_blank" class="social-icon magnetic-btn"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/md-yasin-b92b7237b" target="_blank" class="social-icon magnetic-btn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="mailto:aliyasin4u@gmail.com" class="social-icon magnetic-btn"><i class="fa-solid fa-envelope"></i></a>
-            </div>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="section-header">
+            <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+            <div class="title-line"></div>
         </div>
-        <div class="hero-visuals">
-            <div class="profile-container">
-                <div class="profile-glow"></div>
-                <img src="YASIN PIC.jpg" alt="MD YASIN" class="profile-img" id="hero-profile-img">
+
+        <div class="contact-container">
+            <div class="contact-info glass-card">
+                <h3>Get In Touch</h3>
+                <p>Interested in collaborating on a project, startup idea, or technical solution? Feel free to reach out!</p>
+
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><a href="mailto:aliyasin4u@gmail.com">aliyasin4u@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+918084440846">+91 8084440846</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Godda, Jharkhand, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-links mt-4">
+                    <a href="https://github.com/yasinali123" target="_blank" class="social-icon magnetic-btn"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/md-yasin-b92b7237b" target="_blank" class="social-icon magnetic-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
             </div>
+
+            <form class="contact-form glass-card" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                    <div class="input-glow"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" placeholder="Subject">
+                    <div class="input-glow"></div>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                    <div class="input-glow"></div>
+                </div>
+                <button type="submit" class="btn-primary glow-btn submit-btn magnetic-btn">
+                    <span>Send Message <i class="fa-solid fa-paper-plane"></i></span>
+                </button>
+            </form>
         </div>
     </section>
 
