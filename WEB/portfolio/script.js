@@ -98,17 +98,15 @@ if (customCursor && cursorHud && canvas) {
         // Clear canvas with trail effect
         ctx.clearRect(0, 0, width, height); // Fully clear instead of fillRect so it's transparent over background
 
-        // Inertia tracking
+        // Fast direct cursor tracking
         const dx = mouseX - cursorX;
         const dy = mouseY - cursorY;
-        velX = dx * 0.2;
-        velY = dy * 0.2;
-        cursorX += velX;
-        cursorY += velY;
+        cursorX += dx * 0.75;
+        cursorY += dy * 0.75;
 
         // Rotation tilt based on velocity
         const speed = Math.sqrt(dx*dx + dy*dy);
-        const tilt = Math.min(speed * 0.5, 30); // Max tilt 30deg
+        const tilt = Math.min(speed * 0.3, 20); // Max tilt 20deg
         
         customCursor.style.transform = `translate(${cursorX - 10}px, ${cursorY - 10}px) rotate(${tilt * (dx > 0 ? 1 : -1)}deg)`;
 
@@ -562,6 +560,213 @@ window.addEventListener('click', (e) => {
     if (e.target.classList.contains('project-modal')) {
         e.target.classList.remove('show');
         document.body.style.overflow = '';
+    }
+});
+
+// Interactive Male Avatar Eye Tracking System (Steady Character, Fast Pupil Tracking)
+document.addEventListener('DOMContentLoaded', () => {
+    const pupilLeft = document.getElementById('pupil-left');
+    const pupilRight = document.getElementById('pupil-right');
+    const eyeSocketLeft = document.getElementById('eye-socket-left');
+    const eyeSocketRight = document.getElementById('eye-socket-right');
+    const eyebrowLeft = document.getElementById('eyebrow-left');
+    const eyebrowRight = document.getElementById('eyebrow-right');
+    const eyelidLeft = document.getElementById('eyelid-left');
+    const eyelidRight = document.getElementById('eyelid-right');
+    const avatarCard = document.getElementById('hero-avatar-card');
+
+    let currentMouseX = window.innerWidth / 2;
+    let currentMouseY = window.innerHeight / 2;
+
+    let targetPupilLX = 0, targetPupilLY = 0;
+    let targetPupilRX = 0, targetPupilRY = 0;
+    let curPupilLX = 0, curPupilLY = 0;
+    let curPupilRX = 0, curPupilRY = 0;
+
+    function calcEyeOffset(eyeEl, maxDist = 12) {
+        if (!eyeEl) return { x: 0, y: 0 };
+        const rect = eyeEl.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+
+        const deltaX = currentMouseX - centerX;
+        const deltaY = currentMouseY - centerY;
+        const angle = Math.atan2(deltaY, deltaX);
+        const dist = Math.min(Math.hypot(deltaX, deltaY) / 10, maxDist);
+
+        return {
+            x: Math.cos(angle) * dist,
+            y: Math.sin(angle) * dist
+        };
+    }
+
+    window.addEventListener('mousemove', (e) => {
+        currentMouseX = e.clientX;
+        currentMouseY = e.clientY;
+
+        if (eyeSocketLeft && eyeSocketRight) {
+            const offL = calcEyeOffset(eyeSocketLeft, 12);
+            const offR = calcEyeOffset(eyeSocketRight, 12);
+            targetPupilLX = offL.x;
+            targetPupilLY = offL.y;
+            targetPupilRX = offR.x;
+            targetPupilRY = offR.y;
+        }
+
+        if (eyebrowLeft && eyebrowRight) {
+            const eyeYOffset = (currentMouseY - window.innerHeight / 2) / (window.innerHeight / 2);
+            const browY = eyeYOffset * -2.5;
+            eyebrowLeft.style.transform = `translateY(${browY}px)`;
+            eyebrowRight.style.transform = `translateY(${browY}px)`;
+        }
+    });
+
+    // Fast 60fps pupil tracking render loop
+    function animateAvatar() {
+        curPupilLX += (targetPupilLX - curPupilLX) * 0.55;
+        curPupilLY += (targetPupilLY - curPupilLY) * 0.55;
+        curPupilRX += (targetPupilRX - curPupilRX) * 0.55;
+        curPupilRY += (targetPupilRY - curPupilRY) * 0.55;
+
+        if (pupilLeft) pupilLeft.style.transform = `translate(${curPupilLX}px, ${curPupilLY}px)`;
+        if (pupilRight) pupilRight.style.transform = `translate(${curPupilRX}px, ${curPupilRY}px)`;
+
+        requestAnimationFrame(animateAvatar);
+    }
+    animateAvatar();
+
+    // Natural Eye Blinking Logic
+    function blink() {
+        if (eyelidLeft && eyelidRight) {
+            eyelidLeft.style.opacity = '1';
+            eyelidRight.style.opacity = '1';
+            setTimeout(() => {
+                eyelidLeft.style.opacity = '0';
+                eyelidRight.style.opacity = '0';
+            }, 120);
+        }
+    }
+    setInterval(blink, 4200);
+
+    if (avatarCard) {
+        avatarCard.addEventListener('click', () => {
+            blink();
+            setTimeout(blink, 200);
+        });
+    }
+
+    // Character Voice & Text-To-Speech (TTS) System
+    const speakIntroBtn = document.getElementById('speak-intro-btn');
+    const mouth = document.getElementById('character-mouth');
+    const speechBubbleText = document.getElementById('speech-bubble-text');
+    const avatarCardElem = document.getElementById('hero-avatar-card');
+
+    const heroSpeechText = "Hi! I'm MD Yasin. Computer Science and Engineering Student, Frontend Developer, UI UX Designer, and Founder of Yasinova and RentED. I build scalable web experiences, creative motion, and modern digital architecture. Welcome to my portfolio!";
+
+    let synth = window.speechSynthesis;
+    let isSpeaking = false;
+    let currentUtterance = null;
+
+    function stopSpeaking() {
+        if (synth) {
+            synth.cancel();
+        }
+        isSpeaking = false;
+        if (mouth) mouth.classList.remove('talking-mouth');
+        if (speakIntroBtn) {
+            speakIntroBtn.classList.remove('speaking');
+            speakIntroBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span>Listen Character Intro</span>';
+        }
+        if (speechBubbleText) {
+            speechBubbleText.textContent = "Hi, I'm MD Yasin! Click to hear me speak.";
+        }
+    }
+
+    function speakIntro() {
+        if (!('speechSynthesis' in window)) {
+            alert("Text-to-Speech is not supported in this browser.");
+            return;
+        }
+
+        if (isSpeaking) {
+            stopSpeaking();
+            return;
+        }
+
+        currentUtterance = new SpeechSynthesisUtterance(heroSpeechText);
+        currentUtterance.lang = 'en-IN'; // Indian English
+        currentUtterance.rate = 0.92;
+        currentUtterance.pitch = 0.85; // Male pitch setting
+
+        // Voice filter: Exclude female voices & prioritize Indian Male English voices
+        const voices = synth.getVoices();
+        const isFemale = (vName) => {
+            const n = vName.toLowerCase();
+            return n.includes('female') || n.includes('heera') || n.includes('neerja') || 
+                   n.includes('swara') || n.includes('zira') || n.includes('hazel') || 
+                   n.includes('susan') || n.includes('catherine') || n.includes('woman') || n.includes('girl');
+        };
+
+        const maleIndianVoice = voices.find(v => 
+            (v.lang.toLowerCase().includes('en-in') || v.lang.toLowerCase().includes('en_in')) && 
+            !isFemale(v.name) &&
+            (v.name.toLowerCase().includes('prabhat') || v.name.toLowerCase().includes('rishi') || v.name.toLowerCase().includes('ravi') || v.name.toLowerCase().includes('male'))
+        ) || voices.find(v => 
+            (v.lang.toLowerCase().includes('en-in') || v.lang.toLowerCase().includes('en_in')) && !isFemale(v.name)
+        ) || voices.find(v => 
+            v.lang.toLowerCase().includes('en') && !isFemale(v.name) &&
+            (v.name.toLowerCase().includes('male') || v.name.toLowerCase().includes('david') || v.name.toLowerCase().includes('george') || v.name.toLowerCase().includes('mark') || v.name.toLowerCase().includes('guy'))
+        ) || voices.find(v => !isFemale(v.name));
+
+        if (maleIndianVoice) {
+            currentUtterance.voice = maleIndianVoice;
+        }
+
+        currentUtterance.onstart = () => {
+            isSpeaking = true;
+            if (mouth) mouth.classList.add('talking-mouth');
+            if (speakIntroBtn) {
+                speakIntroBtn.classList.add('speaking');
+                speakIntroBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span>Stop Speaking</span>';
+            }
+            if (speechBubbleText) {
+                speechBubbleText.textContent = "🎙️ Speaking intro...";
+            }
+        };
+
+        currentUtterance.onend = () => {
+            stopSpeaking();
+        };
+
+        currentUtterance.onerror = () => {
+            stopSpeaking();
+        };
+
+        synth.speak(currentUtterance);
+    }
+
+    // Ensure voices are loaded for Chrome/Edge
+    if (synth && synth.onvoiceschanged !== undefined) {
+        synth.onvoiceschanged = () => {
+            synth.getVoices();
+        };
+    }
+
+    if (speakIntroBtn) {
+        speakIntroBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            speakIntro();
+        });
+    }
+
+    if (avatarCardElem) {
+        avatarCardElem.addEventListener('click', () => {
+            if (!isSpeaking) {
+                speakIntro();
+            } else {
+                stopSpeaking();
+            }
+        });
     }
 });
 

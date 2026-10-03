@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
     <!-- FontAwesome Icons -->
@@ -84,10 +84,15 @@
     <!-- Hero Section -->
     <section id="hero" class="section hero-section">
         <div class="hero-content">
-            <div class="intro-badge">Welcome to the Future</div>
-            <h1 class="hero-title">Hi, I'm <span class="gradient-text">MD YASIN</span></h1>
-            <h2 class="hero-subtitle">I am a <span class="typing-text"></span><span class="cursor">|</span></h2>
-            <p class="hero-desc">Computer Science & Engineering Student, Frontend Developer, UI/UX Designer, and Founder of Yasinova & RentED. Building scalable platforms and modern web experiences.</p>
+            <h1 class="hero-title">HI, I'M <span class="hero-name-script">MD Yasin</span></h1>
+            <h2 class="hero-subtitle">I build <span class="typing-text"></span><span class="cursor">|</span></h2>
+            <p class="hero-desc">Computer Science & Engineering Student, Frontend Developer, UI/UX Designer, and Founder of Yasinova & RentED. Building scalable web experiences with creative motion.</p>
+
+            <div class="hero-actions">
+                <button id="speak-intro-btn" class="speak-btn glow-btn magnetic-btn"><i class="fa-solid fa-volume-high"></i> <span>Listen Character Intro</span></button>
+                <a href="Md_Yasin_Resume.pdf" download="Md_Yasin_Resume.pdf" class="btn-primary glow-btn magnetic-btn">RESUME <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="contact.html" class="btn-secondary magnetic-btn">LET'S TALK</a>
+            </div>
 
             <div class="hero-stats">
                 <div class="stat-item">
@@ -104,23 +109,132 @@
                 </div>
             </div>
 
-            <div class="hero-actions">
-                <a href="projects.html" class="btn-primary glow-btn magnetic-btn">View Projects</a>
-                <a href="Md_Yasin_Resume.pdf" download="Md_Yasin_Resume.pdf" class="btn-secondary magnetic-btn"><i
-                        class="fa-solid fa-download"></i> Download
-                    Resume</a>
-            </div>
-
             <div class="social-links">
-                <a href="https://github.com/yasinali123" target="_blank" class="social-icon magnetic-btn"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/md-yasin-b92b7237b" target="_blank" class="social-icon magnetic-btn"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="mailto:aliyasin4u@gmail.com" class="social-icon magnetic-btn"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/yasinali123" target="_blank" class="social-icon magnetic-btn" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/md-yasin-b92b7237b" target="_blank" class="social-icon magnetic-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:aliyasin4u@gmail.com" class="social-icon magnetic-btn" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
             </div>
         </div>
+
         <div class="hero-visuals">
-            <div class="profile-container">
-                <div class="profile-glow"></div>
-                <img src="YASIN PIC.jpg" alt="MD YASIN" class="profile-img" id="hero-profile-img">
+            <div class="full-avatar-wrapper" id="hero-avatar-card" title="Click character to hear intro!">
+                <div class="hero-avatar-glow"></div>
+
+                <!-- Speech Bubble Indicator -->
+                <div class="speech-bubble" id="avatar-speech-bubble">
+                    <i class="fa-solid fa-waveform-lines audio-wave-icon"></i> <span id="speech-bubble-text">Hi, I'm MD Yasin! Click to hear me speak.</span>
+                </div>
+
+                <!-- Vector Male Avatar with Dynamic Eye Pupil Tracking -->
+                <div class="avatar-display-container vector-mode" id="vector-avatar-container">
+                    <svg viewBox="0 0 400 460" class="male-character-svg" id="male-character-svg">
+                        <defs>
+                            <linearGradient id="skinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#ffdfc4"/>
+                                <stop offset="100%" stop-color="#e2ab86"/>
+                            </linearGradient>
+                            <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#2c1a0e"/>
+                                <stop offset="50%" stop-color="#190e07"/>
+                                <stop offset="100%" stop-color="#0a0502"/>
+                            </linearGradient>
+                            <linearGradient id="irisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#00f0ff"/>
+                                <stop offset="60%" stop-color="#0066ff"/>
+                                <stop offset="100%" stop-color="#001a4d"/>
+                            </linearGradient>
+                            <linearGradient id="jacketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#0a192f"/>
+                                <stop offset="100%" stop-color="#020c1b"/>
+                            </linearGradient>
+                            <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="3" result="blur"/>
+                                <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                            </filter>
+                        </defs>
+
+                        <!-- Body & Jacket -->
+                        <g class="character-body">
+                            <path d="M 30,460 C 30,300 100,270 200,270 C 300,270 370,300 370,460 Z" fill="url(#jacketGrad)"/>
+                            <!-- Jacket Collar Neon Accent -->
+                            <path d="M 90,460 L 150,295 L 200,335 L 250,295 L 310,460" fill="none" stroke="#00f0ff" stroke-width="4.5" stroke-linecap="round" filter="url(#neonGlow)"/>
+                            <path d="M 175,335 L 200,460 L 225,335" fill="none" stroke="#ff0055" stroke-width="2.5" stroke-opacity="0.85"/>
+                            <!-- Neck -->
+                            <path d="M 155,235 C 155,275 245,275 245,235 L 245,195 L 155,195 Z" fill="#e5ad88" />
+                            <path d="M 155,205 C 180,230 220,230 245,205 C 240,240 160,240 155,205 Z" fill="#c48a66" opacity="0.6"/>
+                        </g>
+
+                        <!-- Head Group (Static body/head, dynamic pupils) -->
+                        <g class="character-head-group" id="character-head-group">
+                            <!-- Ears -->
+                            <ellipse cx="110" cy="155" rx="14" ry="22" fill="url(#skinGrad)" />
+                            <ellipse cx="110" cy="155" rx="8" ry="14" fill="#d99973" opacity="0.6"/>
+                            <ellipse cx="290" cy="155" rx="14" ry="22" fill="url(#skinGrad)" />
+                            <ellipse cx="290" cy="155" rx="8" ry="14" fill="#d99973" opacity="0.6"/>
+
+                            <!-- Face Base -->
+                            <path d="M 120,95 C 120,30 280,30 280,95 C 280,170 255,235 200,235 C 145,235 120,170 120,95 Z" fill="url(#skinGrad)" />
+
+                            <!-- Cheek & Jawline Shadows -->
+                            <path d="M 128,135 C 138,168 165,205 200,222 C 235,205 262,168 272,135 C 262,178 235,224 200,228 C 165,224 138,178 128,135 Z" fill="#c48560" opacity="0.3"/>
+
+                            <!-- Nose -->
+                            <path d="M 200,140 L 194,172 L 206,172 Z" fill="#cd8e69" opacity="0.75" />
+                            <path d="M 196,172 C 193,176 207,176 204,172" stroke="#b0704b" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+
+                            <!-- Smile Mouth -->
+                            <path id="character-mouth" d="M 172,198 Q 200,214 228,198" stroke="#8c4724" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+                            <!-- Eyebrows -->
+                            <g class="character-eyebrows" id="character-eyebrows">
+                                <path id="eyebrow-left" d="M 134,115 Q 160,103 186,117" stroke="url(#hairGrad)" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+                                <path id="eyebrow-right" d="M 214,117 Q 240,103 266,115" stroke="url(#hairGrad)" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+                            </g>
+
+                            <!-- LEFT EYE SOCKET & PUPIL -->
+                            <g class="eye-socket" id="eye-socket-left" transform="translate(158, 138)">
+                                <ellipse cx="0" cy="0" rx="24" ry="15" fill="#ffffff" stroke="#d5d5d5" stroke-width="1.8"/>
+                                <g class="eye-pupil" id="pupil-left">
+                                    <circle cx="0" cy="0" r="10.5" fill="url(#irisGrad)" filter="url(#neonGlow)"/>
+                                    <circle cx="0" cy="0" r="5.5" fill="#040914"/>
+                                    <circle cx="-3.5" cy="-3.5" r="2.8" fill="#ffffff"/>
+                                    <circle cx="3.5" cy="3.5" r="1.4" fill="#ffffff" opacity="0.85"/>
+                                </g>
+                                <!-- Eyelid blink overlay -->
+                                <ellipse cx="0" cy="0" rx="24.5" ry="15.5" fill="#e2ab86" class="eyelid-overlay" id="eyelid-left"/>
+                            </g>
+
+                            <!-- RIGHT EYE SOCKET & PUPIL -->
+                            <g class="eye-socket" id="eye-socket-right" transform="translate(242, 138)">
+                                <ellipse cx="0" cy="0" rx="24" ry="15" fill="#ffffff" stroke="#d5d5d5" stroke-width="1.8"/>
+                                <g class="eye-pupil" id="pupil-right">
+                                    <circle cx="0" cy="0" r="10.5" fill="url(#irisGrad)" filter="url(#neonGlow)"/>
+                                    <circle cx="0" cy="0" r="5.5" fill="#040914"/>
+                                    <circle cx="-3.5" cy="-3.5" r="2.8" fill="#ffffff"/>
+                                    <circle cx="3.5" cy="3.5" r="1.4" fill="#ffffff" opacity="0.85"/>
+                                </g>
+                                <!-- Eyelid blink overlay -->
+                                <ellipse cx="0" cy="0" rx="24.5" ry="15.5" fill="#e2ab86" class="eyelid-overlay" id="eyelid-right"/>
+                            </g>
+
+                            <!-- Hair Styling -->
+                            <g class="character-hair">
+                                <path d="M 105,100 C 95,35 130,-5 200,-5 C 270,-5 305,35 295,100 C 282,68 250,22 200,22 C 150,22 118,68 105,100 Z" fill="url(#hairGrad)" />
+                                <path d="M 102,85 Q 135,35 180,60 Q 145,88 128,105 Z" fill="url(#hairGrad)"/>
+                                <path d="M 155,40 Q 210,18 258,45 Q 220,80 185,98 Z" fill="url(#hairGrad)"/>
+                                <path d="M 222,35 Q 278,50 295,95 Q 268,90 238,112 Z" fill="url(#hairGrad)"/>
+                                <path d="M 175,28 Q 200,-5 230,22 Q 205,55 192,90 Z" fill="#4a2e18"/>
+                            </g>
+
+                            <!-- Cyber Glasses -->
+                            <g class="tech-glasses">
+                                <path d="M 126,130 Q 158,116 186,130 Q 186,152 158,154 Q 126,152 126,130 Z" fill="rgba(0, 240, 255, 0.06)" stroke="#00f0ff" stroke-width="2.2" stroke-opacity="0.85"/>
+                                <path d="M 214,130 Q 242,116 274,130 Q 274,152 242,154 Q 214,152 214,130 Z" fill="rgba(0, 240, 255, 0.06)" stroke="#00f0ff" stroke-width="2.2" stroke-opacity="0.85"/>
+                                <line x1="186" y1="134" x2="214" y2="134" stroke="#00f0ff" stroke-width="2.8"/>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
             </div>
         </div>
     </section>
